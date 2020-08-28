@@ -2,5 +2,26 @@
 {{ $bootstrap := resources.Get "/js/bootstrap.min.js" }}
 {{ $allscript := slice $jquery $bootstrap | resources.Concat "/js/vendor.js" | minify | fingerprint }}
 <script src="{{ $allscript.RelPermalink }}"></script>
-
+<script type="text/javascript">
+    $(function(){
+    var hash = document.location.hash;
+    if (hash) {
+       $('#toolsTab a[href="' + hash + '"]').tab('show');
+    }
+    $('a[data-toggle="pill"]').on('click', function (e) {
+       history.pushState(null, null, $(this).attr('href'));
+    });
+});
+</script>
+<script>
+    $(document).ready(function(){
+        $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+            localStorage.setItem('activeTab', $(e.target).attr('href'));
+        });
+        var activeTab = localStorage.getItem('activeTab');
+        if(activeTab){
+            $('#toolsTab a[href="' + activeTab + '"]').tab('show');
+        }
+    });
+</script>
 {{ template "_internal/google_analytics_async.html" . }}

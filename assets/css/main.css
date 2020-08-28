@@ -16,6 +16,48 @@ h1 {
     color: #ffffff;
 }
 
+.section { 
+    /* shifts the entire section down depending on the nav-bar size */
+    margin-top: 100px;
+    padding-top: 20px;
+}
+
+
+/* for nav-bar only */
+.navbar-light .navbar-nav .nav-link{color:rgba(0,0,255,.5)}
+.navbar-light .navbar-nav .nav-link:focus,.navbar-light .navbar-nav .nav-link:hover{color:rgba(255,0,0,.7)}
+
+.navbar-toggler:hover {color:rgba(255,0,0,.7)}
+
+.nav-link:hover{
+    background-color: transparent;
+    color: rgba(255,0,0,.8)
+}
+
+.navigation{transition:0.5s ease; background:lightblue;box-shadow:0 0 10px rgba(0,0,0,.3)}
+
+#navbar-logo{max-height:90px;width:auto}
+
+/* change navbar background on collapse */
+@media (max-width: 991px) {
+    .navigation {
+      background:lightblue;
+      box-shadow:0 0 10px rgba(0,0,0,.3)
+    }
+}
+
+/* for single post background */
+#post-background {
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+}  
+
+#search-background{
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* for cards used in homepage & tools*/
 .card {
     opacity: 0.8;
 }
@@ -26,3 +68,38 @@ h1 {
 .cursorPointer:hover {
     cursor: pointer;
 }
+
+/* to adjust max column of services in homepage */
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+    }
+}
+
+.post-meta{color:#999}.post-meta a{color:inherit}.post-meta a:hover{color:#e8505b}

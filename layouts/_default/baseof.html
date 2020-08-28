@@ -5,6 +5,8 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{- partial "head.html" . -}}
     <body class="text-center">
+        {{- partial "preloader.html" . -}}
+        {{- partial "header.html" . -}}
         <main role="main" class="container">
         {{- block "main" . }}{{- end }}
         </main>
